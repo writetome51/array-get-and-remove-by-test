@@ -1,21 +1,25 @@
 {
-  "name": "@writetome51/array-get-and-removers-filtered-results-duplicates",
+  "name": "@writetome51/array-get-and-remove-filtered-results",
   "version": "1.0.0",
-  "description": "array-handling functions that remove and return data from the array",
-  "main": "",
+  "description": "Function that calls Array.filter() and both removes and returns resulting items.",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "array",
     "manipulation",
-    "remove"
+    "filter",
+    "remove",
+    "return",
+    "items"
   ],
   "author": "Steve Thompson",
   "license": "MIT",
-  "devDependencies": {},
+  "devDependencies": {
+    "@writetome51/arrays-match": "latest"
+  },
   "dependencies": {
-    "@writetome51/array-get-duplicates-and-unique-items": "latest",
     "@writetome51/array-non-modifying-getters-basic": "latest",
     "@writetome51/array-remove-all-of-first-of": "latest"
   }
