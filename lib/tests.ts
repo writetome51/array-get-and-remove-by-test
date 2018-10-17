@@ -1,5 +1,5 @@
 import { arraysMatch } from '@writetome51/arrays-match/arraysMatch';
-import { getAndRemoveFilteredResults } from './lib/getAndRemoveFilteredResults';
+import { getAndRemoveFilteredResults } from './getAndRemoveFilteredResults';
 
 
 let arr: any[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 1, 2, 3];
