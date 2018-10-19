@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/array-get-and-remove-filtered-results",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Function that calls Array.filter() and both removes and returns resulting items.",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,7 @@
     "@writetome51/arrays-match": "latest"
   },
   "dependencies": {
+    "basic-data-handling": "latest",
     "@writetome51/array-get-filtered-results": "latest",
     "@writetome51/array-remove-all-of-first-of": "latest"
   }
