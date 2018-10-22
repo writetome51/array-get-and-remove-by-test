@@ -1,4 +1,4 @@
-import { arraysMatch } from '@writetome51/arrays-match/arraysMatch';
+import { arraysMatch } from '@writetome51/arrays-match';
 import { getAndRemoveFilteredResults } from './getAndRemoveFilteredResults';
 
 
