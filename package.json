@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/array-get-and-remove-filtered-results",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Function that calls Array.filter() and both removes and returns resulting items.",
   "main": "index.js",
   "scripts": {
