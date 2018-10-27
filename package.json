@@ -1,11 +1,16 @@
 {
   "name": "@writetome51/array-get-and-remove-filtered-results",
   "version": "2.0.0",
-  "description": "Function that receives a test function and both removes and returns resulting items that pass test.",
+  "description": "Receives a test function and both removes and returns resulting items that pass test.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/writetome51/array-get-and-remove-filtered-results.git"
+  },
+
   "keywords": [
     "array",
     "manipulation",
@@ -16,6 +21,10 @@
   ],
   "author": "Steve Thompson",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/writetome51/array-get-and-remove-filtered-results/issues"
+  },
+  "homepage": "https://github.com/writetome51/array-get-and-remove-filtered-results#readme",
   "devDependencies": {
     "@writetome51/arrays-match": "latest"
   },
