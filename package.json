@@ -1,7 +1,7 @@
 {
   "name": "@writetome51/array-get-and-remove-filtered-results",
-  "version": "1.0.3",
-  "description": "Function that calls Array.filter() and both removes and returns resulting items.",
+  "version": "2.0.0",
+  "description": "Function that receives a test function and both removes and returns resulting items that pass test.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,6 +22,7 @@
   "dependencies": {
     "basic-data-handling": "latest",
     "@writetome51/array-get-filtered-results": "latest",
-    "@writetome51/array-remove-all-of-first-of": "latest"
+    "@writetome51/array-remove-all-of-first-of": "latest",
+    "@writetome51/array-replace-at": "latest"
   }
 }
