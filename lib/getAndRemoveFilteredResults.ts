@@ -1,6 +1,9 @@
 import { getFilteredResults } from '@writetome51/array-get-filtered-results';
-import { removeAllOf } from '@writetome51/array-remove-all-of-first-of';
+import { removeItems } from '@writetome51/array-remove-items';
 import { notEmpty } from 'basic-data-handling/isEmpty_notEmpty';
+// @ts-ignore
+let arrayPluck = require('array-pluck'); // extracts array from one property of array of objects.
+
 
 
 export function getAndRemoveFilteredResults(
@@ -10,21 +13,11 @@ export function getAndRemoveFilteredResults(
 
 	// filteredResults is array of objects that match interface {value: any,  index: integer}
 	let filteredResults = getFilteredResults(testFunction, array);
-	let removalMarker = '***marked-for-removal***';
 
 	if (notEmpty(filteredResults)) {
-		replaceFilteredItemsWithRemovalMarker(array);
-
-		removeAllOf(removalMarker, array);
+		// get array of indexes from filteredResults objects:
+		let indexes = arrayPluck(filteredResults, 'index');
+		removeItems(indexes, array);
 	}
 	return filteredResults;
-
-
-	function replaceFilteredItemsWithRemovalMarker(array) {
-		let i = -1, indexToReplace: number;
-		while (++i < filteredResults.length) {
-			indexToReplace = filteredResults[i]['index'];
-			array[indexToReplace] = removalMarker;
-		}
-	}
 }

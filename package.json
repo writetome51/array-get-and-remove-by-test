@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/array-get-and-remove-filtered-results",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Receives a test function and both removes and returns resulting items that pass test.",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/writetome51/array-get-and-remove-filtered-results.git"
   },
-
   "keywords": [
     "array",
     "manipulation",
@@ -29,9 +28,10 @@
     "@writetome51/arrays-match": "latest"
   },
   "dependencies": {
-    "basic-data-handling": "latest",
     "@writetome51/array-get-filtered-results": "latest",
-    "@writetome51/array-remove-all-of-first-of": "latest",
-    "@writetome51/array-replace-at": "latest"
+    "@writetome51/array-remove-items": "latest",
+    "@writetome51/array-replace-at": "latest",
+    "array-pluck": "^1.0.0",
+    "basic-data-handling": "latest"
   }
 }

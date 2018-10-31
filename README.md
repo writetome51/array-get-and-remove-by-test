@@ -1,5 +1,6 @@
-This function removes array items if they pass a callback test-function, 
-and returns an array of objects, each containing the removed value and its index:
+This function removes array items if they pass a test-function, 
+and returns an array of objects, each containing the removed value and its index.
+The array of objects matches this interface: {value: any,  index: integer}
 
 getAndRemoveFilteredResults(testFunction, array); // returns array of objects
 
