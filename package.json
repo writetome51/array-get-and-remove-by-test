@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/array-get-and-remove-filtered-results",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Receives a test function and both removes and returns resulting items that pass test.",
   "main": "index.js",
   "scripts": {
