@@ -28,8 +28,9 @@
     "@writetome51/arrays-match": "latest"
   },
   "dependencies": {
+    "value-index-pair-interface": "latest",
     "@writetome51/array-get-filtered-results": "latest",
-    "@writetome51/array-remove-items": "latest",
+    "@writetome51/array-remove-by-indexes": "latest",
     "array-pluck": "^1.0.0",
     "basic-data-handling": "latest"
   }
