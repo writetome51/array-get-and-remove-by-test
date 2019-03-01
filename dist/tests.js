@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var arrays_match_1 = require("@writetome51/arrays-match");
-var getAndRemoveFilteredResults_1 = require("./getAndRemoveFilteredResults");
+var index_1 = require("./index");
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 1, 2, 3];
 var otherArr = arr;
 // Test 1: Make sure it gets items gotten by number-matching:
-var filtered = getAndRemoveFilteredResults_1.getAndRemoveFilteredResults(function (item) { return (item === 1 || item === 10); }, arr);
+var filtered = index_1.getAndRemoveByTest(function (item) { return (item === 1 || item === 10); }, arr);
 if (filtered.length === 4 && filtered[0]['value'] === 1 && filtered[1]['value'] === 10 &&
     filtered[2]['value'] === 1 && filtered[3]['value'] === 1)
     console.log('test 1 passed');
@@ -23,7 +23,7 @@ else
     console.log('test 2A failed');
 // Test 3: Make sure it gets items by string-matching:
 arr = ['hello', '??', 2, 'h', 1, 5, 'h', 'mertyujkl;', 20];
-filtered = getAndRemoveFilteredResults_1.getAndRemoveFilteredResults(function (item) { return (item[0] === 'h'); }, arr);
+filtered = index_1.getAndRemoveByTest(function (item) { return (item[0] === 'h'); }, arr);
 if (filtered.length === 3 && filtered[0]['value'] === 'hello' && filtered[1]['value'] === 'h' &&
     filtered[2]['value'] === 'h' && filtered[0]['index'] === 0 && filtered[1]['index'] === 3 &&
     filtered[2]['index'] === 6)
@@ -37,7 +37,7 @@ else
     console.log('test 4 failed');
 // Test 5: Make sure it gets boolean items:
 arr = [[1, 2, 3], true, 10, false, 2, 'h', 1, 5, true];
-filtered = getAndRemoveFilteredResults_1.getAndRemoveFilteredResults(function (item) { return item === true; }, arr);
+filtered = index_1.getAndRemoveByTest(function (item) { return item === true; }, arr);
 if (filtered.length === 2 && filtered[0]['value'] === true && filtered[1]['value'] === true &&
     filtered[0]['index'] === 1 && filtered[1]['index'] === 8)
     console.log('test 5 passed');
@@ -50,7 +50,7 @@ else
     console.log('test 6 failed');
 // Test 7: Make sure it can spot arrays and search their items:
 arr = [[10, 2, 3], [2, 3, 4], 1, 5, 6, false, [10, 20]];
-filtered = getAndRemoveFilteredResults_1.getAndRemoveFilteredResults(function (item) {
+filtered = index_1.getAndRemoveByTest(function (item) {
     return (Array.isArray(item) && item[0] === 10);
 }, arr);
 if (filtered.length === 2 && Array.isArray(filtered[0]['value']) && Array.isArray(filtered[1]['value']) &&
@@ -66,7 +66,7 @@ else
 // Test 9: make sure error is triggered is first arg is not function:
 var errorTriggered = false;
 try {
-    getAndRemoveFilteredResults_1.getAndRemoveFilteredResults(true, arr);
+    index_1.getAndRemoveByTest(true, arr);
 }
 catch (e) {
     errorTriggered = true;
@@ -78,7 +78,7 @@ else
 // Test 10: make sure error is triggered is second arg is not array:
 errorTriggered = false;
 try {
-    getAndRemoveFilteredResults_1.getAndRemoveFilteredResults(function (item) {
+    index_1.getAndRemoveByTest(function (item) {
         return item === 1;
     }, {});
 }
@@ -92,7 +92,7 @@ else
 // Test 11: if testFunction doesn't match any item, an empty array should still get
 // returned:
 arr = [1, 2, 3, 4, 5, 6, 7];
-filtered = getAndRemoveFilteredResults_1.getAndRemoveFilteredResults(function (item) { return (typeof item === 'boolean'); }, arr);
+filtered = index_1.getAndRemoveByTest(function (item) { return (typeof item === 'boolean'); }, arr);
 if (filtered.length === 0)
     console.log('test 11 passed');
 else

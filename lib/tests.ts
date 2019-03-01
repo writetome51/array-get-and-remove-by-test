@@ -1,12 +1,12 @@
 import { arraysMatch } from '@writetome51/arrays-match';
-import { getAndRemoveFilteredResults } from './getAndRemoveFilteredResults';
+import { getAndRemoveByTest } from './index';
 
 
 let arr: any[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 1, 2, 3];
 let otherArr = arr;
 
 // Test 1: Make sure it gets items gotten by number-matching:
-let filtered = getAndRemoveFilteredResults((item) => (item === 1 || item === 10), arr);
+let filtered = getAndRemoveByTest((item) => (item === 1 || item === 10), arr);
 
 if (filtered.length === 4 && filtered[0]['value'] === 1 && filtered[1]['value'] === 10 &&
 	filtered[2]['value'] === 1 && filtered[3]['value'] === 1) console.log('test 1 passed');
@@ -26,7 +26,7 @@ else console.log('test 2A failed');
 // Test 3: Make sure it gets items by string-matching:
 arr = ['hello', '??', 2, 'h', 1, 5, 'h', 'mertyujkl;', 20];
 
-filtered = getAndRemoveFilteredResults((item) => (item[0] === 'h'), arr);
+filtered = getAndRemoveByTest((item) => (item[0] === 'h'), arr);
 
 if (filtered.length === 3 && filtered[0]['value'] === 'hello' && filtered[1]['value'] === 'h' &&
 	filtered[2]['value'] === 'h' && filtered[0]['index'] === 0 && filtered[1]['index'] === 3 &&
@@ -42,7 +42,7 @@ else console.log('test 4 failed');
 
 // Test 5: Make sure it gets boolean items:
 arr = [[1, 2, 3], true, 10, false, 2, 'h', 1, 5, true];
-filtered = getAndRemoveFilteredResults((item) => item === true, arr);
+filtered = getAndRemoveByTest((item) => item === true, arr);
 
 if (filtered.length === 2 && filtered[0]['value'] === true && filtered[1]['value'] === true &&
 	filtered[0]['index'] === 1 && filtered[1]['index'] === 8) console.log('test 5 passed');
@@ -57,7 +57,7 @@ else console.log('test 6 failed');
 
 // Test 7: Make sure it can spot arrays and search their items:
 arr = [[10, 2, 3], [2, 3, 4], 1, 5, 6, false, [10, 20]];
-filtered = getAndRemoveFilteredResults((item) => {
+filtered = getAndRemoveByTest((item) => {
 	return (Array.isArray(item) && item[0] === 10);
 }, arr);
 if (filtered.length === 2 && Array.isArray(filtered[0]['value']) && Array.isArray(filtered[1]['value']) &&
@@ -74,7 +74,7 @@ else console.log('test 8 failed');
 // Test 9: make sure error is triggered is first arg is not function:
 let errorTriggered = false;
 try {
-	getAndRemoveFilteredResults(true, arr);
+	getAndRemoveByTest(true, arr);
 }
 catch (e) {
 	errorTriggered = true;
@@ -86,7 +86,7 @@ else console.log('test 9 failed');
 // Test 10: make sure error is triggered is second arg is not array:
 errorTriggered = false;
 try {
-	getAndRemoveFilteredResults(function (item) {
+	getAndRemoveByTest(function (item) {
 		return item === 1;
 	}, {});
 }
@@ -100,6 +100,6 @@ else console.log('test 10 failed');
 // Test 11: if testFunction doesn't match any item, an empty array should still get
 // returned:
 arr = [1, 2, 3, 4, 5, 6, 7];
-filtered = getAndRemoveFilteredResults((item) => (typeof item === 'boolean'), arr);
+filtered = getAndRemoveByTest((item) => (typeof item === 'boolean'), arr);
 if (filtered.length === 0) console.log('test 11 passed');
 else console.log('test 11 failed');

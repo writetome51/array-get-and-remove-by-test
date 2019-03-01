@@ -1,14 +1,15 @@
 {
-  "name": "@writetome51/array-get-and-remove-filtered-results",
-  "version": "2.0.5",
-  "description": "Receives a test function and both removes and returns resulting items that pass test.",
-  "main": "index.js",
+  "name": "@writetome51/array-get-and-remove-by-test",
+  "version": "1.0.0",
+  "description": "Removes and returns array items that pass a test",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/writetome51/array-get-and-remove-filtered-results.git"
+    "url": "git+https://github.com/writetome51/array-get-and-remove-by-test.git"
   },
   "keywords": [
     "array",
@@ -21,17 +22,17 @@
   "author": "Steve Thompson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/writetome51/array-get-and-remove-filtered-results/issues"
+    "url": "https://github.com/writetome51/array-get-and-remove-by-test/issues"
   },
-  "homepage": "https://github.com/writetome51/array-get-and-remove-filtered-results#readme",
+  "homepage": "https://github.com/writetome51/array-get-and-remove-by-test#readme",
   "devDependencies": {
-    "@writetome51/arrays-match": "~1.0.4"
+    "@writetome51/arrays-match": "~1.0.5"
   },
   "dependencies": {
     "value-index-pair-interface": "~1.0.1",
-    "@writetome51/array-get-filtered-results": "~2.0.1",
-    "@writetome51/array-remove-by-indexes": "~1.0.0",
-    "array-pluck": "^1.0.0",
-    "basic-data-handling": "~1.0.13"
+    "@writetome51/array-get-by-test": "~1.0.0",
+    "@writetome51/array-remove-by-indexes": "~1.0.2",
+    "@writetome51/get-array-from-property": "~1.1.1",
+    "basic-data-handling": "~1.0.15"
   }
 }
