@@ -1,8 +1,8 @@
-import { IValueIndexPair } from 'value-index-pair-interface/IValueIndexPair';
-import { getByTest } from '@writetome51/array-get-by-test';
-import { removeByIndexes } from '@writetome51/array-remove-by-indexes';
-import { notEmpty } from 'basic-data-handling/isEmpty_notEmpty';
 import { getArrayFromProperty } from '@writetome51/get-array-from-property';
+import { getByTest } from '@writetome51/array-get-by-test';
+import { IValueIndexPair } from 'value-index-pair-interface/IValueIndexPair';
+import { notEmpty } from '@writetome51/is-empty-not-empty';
+import { removeByIndexes } from '@writetome51/array-remove-by-indexes';
 
 
 export function getAndRemoveByTest(

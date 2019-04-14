@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/array-get-and-remove-by-test",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Removes and returns array items that pass a test",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -26,13 +26,13 @@
   },
   "homepage": "https://github.com/writetome51/array-get-and-remove-by-test#readme",
   "devDependencies": {
-    "@writetome51/arrays-match": "~1.0.5"
+    "@writetome51/arrays-match": "~1.0.6"
   },
   "dependencies": {
     "value-index-pair-interface": "~1.0.1",
     "@writetome51/array-get-by-test": "~1.0.0",
     "@writetome51/array-remove-by-indexes": "~1.0.2",
     "@writetome51/get-array-from-property": "~1.1.1",
-    "basic-data-handling": "~1.0.15"
+    "@writetome51/is-empty-not-empty": "~1.0.0"
   }
 }
