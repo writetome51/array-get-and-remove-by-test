@@ -1,7 +1,4 @@
-import { IValueIndexPair } from 'value-index-pair-interface/IValueIndexPair';
-
-
 export declare function getAndRemoveByTest(
-	testFunction: (currentValue: any, currentIndex?: number, theArray?: any[]) => boolean,
+	testFunction: (value: any, index?: number, array?: any[]) => boolean,
 	array: any[]
-): IValueIndexPair[];
+): Array<{ value: any; index: number; }>;
