@@ -1,40 +1,30 @@
-# getAndRemoveByTest(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testFunction,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array<br>):  IValueIndexPair[]
+# getAndRemoveByTest(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testFn: (value, index?, array?) => boolean,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array<br>): Array<{ value: any, index: number }>
 
-Removes and returns any item in `array` that passes a `testFunction`.  
-`testFunction = function(value,  index?,  theArray?): boolean`
+Removes and returns any item in `array` that passes a `testFn`.  
+Each item returned is represented as: `{value: any,  index: number}` .
 
-The removed items are returned as IValueIndexPairs.  
-A IValueIndexPair is this object: `{value: any,  index: integer}` .
+## Examples
+```js
+let arr = ['a', 'bb', 'c', 'dd', 'e', 'ff'];
+getAndRemoveByTest((value) => value.length > 1, arr);
+// -->  [{value:'bb', index:1}, {value:'dd', index:3}, {value:'ff', index:5}]
+// 
+// arr is now ['a', 'c', 'e']
 
-## Example
-```
-let arr = [1,2,3,4,5,6,7,8,9,10];
-
-let removed = getAndRemoveByTest((item) => (item * 2) === 10,  arr);
-// removed is [ {value: 5, index: 4} ]
-// arr is now [1,2,3,4,6,7,8,9,10]
-    
-arr = [ [10, 2, 3], [2, 3, 4], 1, 6, false, [10, 20] ];
-
-removed = getAndRemoveByTest(
-    (item) => (Array.isArray(item) && item[0] === 10),
-    arr
-);
-// removed is [ {value: [10, 2, 3], index: 0},  {value: [10, 20], index: 5} ]
-// arr is now [ [2, 3, 4], 1, 6, false ]
+arr = [50, -10, 100, -20, 1000, -100];
+getAndRemoveByTest((item) => item < 0, arr);
+// --> [{value: -10, index:1}, {value: -20, index:3}, {value: -100, index:5}]
+// 
+// arr is now [50, 100, 1000]
 ```
 
 
 ## Installation
 ```bash
-npm install @writetome51/array-get-and-remove-by-test
+npm i @writetome51/array-get-and-remove-by-test
 ```
 
 ## Loading
-```
-// If using TypeScript:
+```js
 import {getAndRemoveByTest} from '@writetome51/array-get-and-remove-by-test';
-// If using ES5 JavaScript:
-var getAndRemoveByTest = 
-    require('@writetome51/array-get-and-remove-by-test').getAndRemoveByTest;
 ```
