@@ -1,19 +1,33 @@
-import { getArrayFromProperty } from '@writetome51/get-array-from-property';
-import { getByTest } from '@writetome51/array-get-by-test';
-import { notEmpty } from '@writetome51/is-empty-not-empty';
-import { removeByIndexes } from '@writetome51/array-remove-by-indexes';
+import { removeByIndex } from '@writetome51/array-remove-by-index';
+import reverse from '@arr/reverse';
 
 
 export function getAndRemoveByTest(
-	testFunction: (value, index?, array?) => boolean,
-	array
-): Array<{ value: any, index: number }> {
+	test: (value, index?, array?) => boolean,
+	array,
+	getValue: (value, index?, array?) => any = (value) => value,
 
-	let found: Array<{ value: any, index: number }> = getByTest(testFunction, array);
+): any[] {
 
-	if (notEmpty(found)) {
-		let indexes = getArrayFromProperty('index', found);
-		removeByIndexes(indexes, array);
+	let found = [];
+	const action = (value, index) => {
+		found.push(getValue(value, index, array));
+		removeByIndex(index, array);
+	};
+	forEach_ifPasses_doAction_fromRight(test, action, array);
+
+	// Returns items in ascending index order
+	return reverse(found);
+
+
+	function forEach_ifPasses_doAction_fromRight(
+		test: (value, index?, array?) => boolean,
+		action: (value?, index?, array?) => void,
+		array
+	) {
+		for (let i = array.length - 1;  i > -1;  --i) {
+			if (test(array[i], i, array))  action(array[i], i, array);
+		}
 	}
-	return found;
+
 }
