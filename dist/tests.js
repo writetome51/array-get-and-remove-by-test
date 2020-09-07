@@ -45,7 +45,6 @@ filtered = getAndRemoveByTest(
 		return {value, index};
 	}
 );
-console.log(filtered);
 if (filtered.length === 3 && filtered[0]['value'] === true && filtered[1]['value'] === false &&
 	filtered[2]['value'] === true &&
 	filtered[0]['index'] === 1 && filtered[1]['index'] === 3 && filtered[2]['index'] === 8)
@@ -95,8 +94,6 @@ if (Array.isArray(filtered) && filtered.length === 0) console.log('test 11 passe
 else console.log('test 11 FAILED');
 
 
-// Test 12: if testFunction doesn't match any item, an empty array should still get
-// returned:
 arr = [1,2,3,4];
 filtered = getAndRemoveByTest((item) => (typeof item === 'number'), arr);
 if (arraysMatch(filtered, [1,2,3,4])) console.log('test 12 passed');
