@@ -45,6 +45,7 @@ filtered = getAndRemoveByTest(
 		return {value, index};
 	}
 );
+console.log(filtered);
 if (filtered.length === 3 && filtered[0]['value'] === true && filtered[1]['value'] === false &&
 	filtered[2]['value'] === true &&
 	filtered[0]['index'] === 1 && filtered[1]['index'] === 3 && filtered[2]['index'] === 8)
