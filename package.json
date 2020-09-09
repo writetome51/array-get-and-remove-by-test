@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/array-get-and-remove-by-test",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Removes and returns array items that pass a test",
   "type": "module",
   "main": "dist/index.js",
@@ -31,6 +31,6 @@
   },
   "dependencies": {
     "@arr/reverse": "^1.0.1",
-    "@writetome51/array-remove-by-index": ">=2.0.0"
+    "@writetome51/array-remove-by-test": ">=2.1.0"
   }
 }
