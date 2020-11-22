@@ -1,5 +1,5 @@
 import { removeByTest } from '@writetome51/array-remove-by-test';
-import reverse from '@arr/reverse';
+import { prepend } from '@writetome51/array-append-prepend';
 
 
 export function getAndRemoveByTest(
@@ -12,9 +12,8 @@ export function getAndRemoveByTest(
 
 	// Removes items in descending index order:
 	removeByTest(test, array, (value, index, array) => {
-		found.push(getValue(value, index, array));
+		prepend(getValue(value, index, array), found);
 	});
 
-	// Return items in ascending index order:
-	return reverse(found);
+	return found;
 }
