@@ -1,8 +1,8 @@
-# getAndRemoveByTest(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test: (value, index?, array?) => boolean,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getValue?: (value, index?, array?) => any<br>): any[]
+# getAndRemoveByTest\<T, X\>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test: (value: T, index?: number, array?: T[]) => boolean,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array: T[],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getValue?: (value: T, index?: number, array?: T[]) => X<br>): X[]
 
-Removes and returns any item in `array` that passes `test`.  
-Includes optional callback `getValue()`, which lets you customize what value to get  
-from the element that passes `test`. By default `getValue()` simply returns the element.  
+Removes and returns items in `array` that pass `test`.  
+Includes optional callback `getValue()`, which lets you customize what value to get from an element 
+that passes `test`.
 
 
 ## Examples
@@ -17,7 +17,7 @@ arr = [true, 10, false, 2, 'h', 1, true];
 getAndRemoveByTest(
     (item) => typeof item === 'boolean',
     arr,
-    (value, index) => { return {value, index}; }
+    (value, index) => ( {value, index} )
 );
 /**********
 Returns:

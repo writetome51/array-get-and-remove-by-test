@@ -3,11 +3,8 @@
   "version": "3.0.2",
   "description": "Removes and returns array items that pass a test",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc"
-  },
+  "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/writetome51/array-get-and-remove-by-test.git"
@@ -27,7 +24,7 @@
   },
   "homepage": "https://github.com/writetome51/array-get-and-remove-by-test#readme",
   "devDependencies": {
-    "@writetome51/arrays-match": ">=2.0.2"
+    "@writetome51/is-match": ">=0.0.1"
   },
   "dependencies": {
     "@writetome51/array-append-prepend": ">=3.0.0",
