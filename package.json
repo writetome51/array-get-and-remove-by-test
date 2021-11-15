@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/array-get-and-remove-by-test",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Removes and returns array items that pass a test",
   "type": "module",
   "main": "index.js",
