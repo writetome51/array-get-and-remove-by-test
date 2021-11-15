@@ -1,21 +1,20 @@
-import {arraysMatch} from '@writetome51/arrays-match';
+import {isMatch} from '@writetome51/is-match';
 import {getAndRemoveByTest} from './index.js';
 
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 1, 2, 3];
 let otherArr = arr;
 
-console.time('check');
 
 // Test 1: Make sure it gets items gotten by number-matching:
 let filtered = getAndRemoveByTest((item) => (item === 1 || item === 10), arr);
-console.timeEnd('check');
-if (arraysMatch(filtered, [1, 10, 1, 1])) console.log('test 1 passed');
+
+if (isMatch(filtered, [1, 10, 1, 1])) console.log('test 1 passed');
 else console.log('test 1 FAILED');
 
 
 // Test 2: make sure those items were removed:
-if (arraysMatch(arr, [2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 2, 3])) console.log('test 2 passed');
+if (isMatch(arr, [2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 2, 3])) console.log('test 2 passed');
 else console.log('test 2 FAILED');
 
 
@@ -27,12 +26,12 @@ else console.log('test 2A FAILED');
 // Test 3: Make sure it gets items by string-matching:
 arr = ['hello', '??', 2, 'h', 1, 5, 'h', 'mertyujkl;', 20];
 filtered = getAndRemoveByTest((item) => (item[0] === 'h'), arr);
-if (arraysMatch(filtered, ['hello', 'h', 'h'])) console.log('test 3 passed');
+if (isMatch(filtered, ['hello', 'h', 'h'])) console.log('test 3 passed');
 else console.log('test 3 FAILED');
 
 
 // Test 4: make sure those items were removed from array:
-if (arraysMatch(arr, ['??', 2, 1, 5, 'mertyujkl;', 20])) console.log('test 4 passed');
+if (isMatch(arr, ['??', 2, 1, 5, 'mertyujkl;', 20])) console.log('test 4 passed');
 else console.log('test 4 FAILED');
 
 
@@ -55,7 +54,7 @@ else console.log('test 5 FAILED');
 
 
 // Test 6: make sure those items were removed from array:
-if (arraysMatch(arr, [[1, 2, 3], 10, 2, 'h', 1, 5])) console.log('test 6 passed');
+if (isMatch(arr, [[1, 2, 3], 10, 2, 'h', 1, 5])) console.log('test 6 passed');
 else console.log('test 6 FAILED');
 
 
@@ -66,12 +65,12 @@ filtered = getAndRemoveByTest(
 	arr,
 	(value) => value[1]
 );
-if (arraysMatch(filtered, [2, 20])) console.log('test 7 passed');
+if (isMatch(filtered, [2, 20])) console.log('test 7 passed');
 else console.log('test 7 FAILED');
 
 
 // Test 8: make sure those items were removed from array:
-if (arraysMatch(arr, [[2, 3, 4], 1, 5, 6, false])) console.log('test 8 passed');
+if (isMatch(arr, [[2, 3, 4], 1, 5, 6, false])) console.log('test 8 passed');
 else console.log('test 8 FAILED');
 
 
@@ -96,11 +95,11 @@ else console.log('test 11 FAILED');
 
 arr = [1,2,3,4];
 filtered = getAndRemoveByTest((item) => (typeof item === 'number'), arr);
-if (arraysMatch(filtered, [1,2,3,4])) console.log('test 12 passed');
+if (isMatch(filtered, [1,2,3,4])) console.log('test 12 passed');
 else console.log('test 12 FAILED');
 
 
-if (arraysMatch(arr, [])) console.log('test 13 passed');
+if (isMatch(arr, [])) console.log('test 13 passed');
 else console.log('test 13 FAILED');
 
 

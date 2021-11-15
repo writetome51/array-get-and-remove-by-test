@@ -1,4 +1,4 @@
-# getAndRemoveByTest\<T, X\>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test: (value: T, index?: number, array?: T[]) => boolean,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array: T[],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getValue?: (value: T, index?: number, array?: T[]) => X<br>): X[]
+# getAndRemoveByTest\<T, X\>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test: (<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value: T, index?: number, array?: T[]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;) => boolean,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array: T[],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getValue?: (<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value: T, index?: number, array?: T[]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;) => X<br>): X[]
 
 Removes and returns items in `array` that pass `test`.  
 Includes optional callback `getValue()`, which lets you customize what value to get from an element 
